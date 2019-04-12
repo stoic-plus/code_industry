@@ -12,7 +12,9 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-
+/coverage
+/spec/cassettes
+/tmp
 # Ignore uploaded files in development
 /storage/*
 !/storage/.keep
