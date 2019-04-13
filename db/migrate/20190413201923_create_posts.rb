@@ -4,7 +4,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.string :title
       t.string :author
       t.text :content
-      t.integer :upvotes
+      t.integer :upvotes, default: 0
       t.references :topic, foreign_key: true
       t.references :user, foreign_key: true
     end

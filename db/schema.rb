@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_13_204234) do
+ActiveRecord::Schema.define(version: 2019_04_13_212529) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 2019_04_13_204234) do
     t.string "title"
     t.string "author"
     t.text "content"
-    t.integer "upvotes"
+    t.integer "upvotes", default: 0
     t.bigint "topic_id"
     t.bigint "user_id"
     t.index ["topic_id"], name: "index_posts_on_topic_id"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 2019_04_13_204234) do
 
   create_table "topics", force: :cascade do |t|
     t.string "name"
+    t.integer "moderator_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -72,6 +73,7 @@ ActiveRecord::Schema.define(version: 2019_04_13_204234) do
     t.string "name"
     t.string "email"
     t.string "password_digest"
+    t.boolean "moderator"
   end
 
   add_foreign_key "articles", "topics"
@@ -83,4 +85,5 @@ ActiveRecord::Schema.define(version: 2019_04_13_204234) do
   add_foreign_key "followed_topics", "users"
   add_foreign_key "posts", "topics"
   add_foreign_key "posts", "users"
+  add_foreign_key "topics", "users", column: "moderator_id"
 end
