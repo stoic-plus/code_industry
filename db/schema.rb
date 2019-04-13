@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_13_192938) do
+ActiveRecord::Schema.define(version: 2019_04_13_212529) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,18 @@ ActiveRecord::Schema.define(version: 2019_04_13_192938) do
     t.string "url_to_image"
     t.datetime "published_at"
     t.text "context"
+    t.bigint "topic_id"
+    t.index ["topic_id"], name: "index_articles_on_topic_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string "title"
+    t.string "content"
+    t.string "author"
+    t.bigint "user_id"
+    t.bigint "post_id"
+    t.index ["post_id"], name: "index_comments_on_post_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "favorited_articles", force: :cascade do |t|
@@ -40,8 +52,20 @@ ActiveRecord::Schema.define(version: 2019_04_13_192938) do
     t.index ["user_id"], name: "index_followed_topics_on_user_id"
   end
 
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.string "author"
+    t.text "content"
+    t.integer "upvotes", default: 0
+    t.bigint "topic_id"
+    t.bigint "user_id"
+    t.index ["topic_id"], name: "index_posts_on_topic_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
   create_table "topics", force: :cascade do |t|
     t.string "name"
+    t.integer "moderator_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -49,10 +73,17 @@ ActiveRecord::Schema.define(version: 2019_04_13_192938) do
     t.string "name"
     t.string "email"
     t.string "password_digest"
+    t.boolean "moderator"
   end
 
+  add_foreign_key "articles", "topics"
+  add_foreign_key "comments", "posts"
+  add_foreign_key "comments", "users"
   add_foreign_key "favorited_articles", "articles"
   add_foreign_key "favorited_articles", "users"
   add_foreign_key "followed_topics", "topics"
   add_foreign_key "followed_topics", "users"
+  add_foreign_key "posts", "topics"
+  add_foreign_key "posts", "users"
+  add_foreign_key "topics", "users", column: "moderator_id"
 end

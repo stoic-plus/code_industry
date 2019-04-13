@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :articles, through: :favorited_articles
   has_many :followed_topics
   has_many :topics, through: :followed_topics
+  has_many :posts
 end
