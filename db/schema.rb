@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_13_201923) do
+ActiveRecord::Schema.define(version: 2019_04_13_204234) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,16 @@ ActiveRecord::Schema.define(version: 2019_04_13_201923) do
     t.text "context"
     t.bigint "topic_id"
     t.index ["topic_id"], name: "index_articles_on_topic_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string "title"
+    t.string "content"
+    t.string "author"
+    t.bigint "user_id"
+    t.bigint "post_id"
+    t.index ["post_id"], name: "index_comments_on_post_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "favorited_articles", force: :cascade do |t|
@@ -65,6 +75,8 @@ ActiveRecord::Schema.define(version: 2019_04_13_201923) do
   end
 
   add_foreign_key "articles", "topics"
+  add_foreign_key "comments", "posts"
+  add_foreign_key "comments", "users"
   add_foreign_key "favorited_articles", "articles"
   add_foreign_key "favorited_articles", "users"
   add_foreign_key "followed_topics", "topics"
