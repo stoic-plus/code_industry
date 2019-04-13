@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2019_04_13_201923) do
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.string "author"
-    t.text "context"
+    t.text "content"
     t.integer "upvotes"
     t.bigint "topic_id"
     t.bigint "user_id"

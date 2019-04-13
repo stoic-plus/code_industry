@@ -13,5 +13,6 @@ describe User, type: :model do
   describe 'relationships' do
     it {should have_many(:articles).through(:favorited_articles)}
     it {should have_many(:topics).through(:followed_topics)}
+    it {should have_many(:posts)}
   end
 end
