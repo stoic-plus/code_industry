@@ -1,5 +1,5 @@
 class NewsService
-  def self.everything_search(search_query, sortBy='relevance', from, to)
+  def self.everything_search(search_query, sortBy='relevance', from=nil, to=nil)
     response = conn.get do |req|
       req.url 'everything'
       req.params['q'] = "\"#{search_query}\""
