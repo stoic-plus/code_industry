@@ -14,5 +14,11 @@ describe NewsFacade, type: :facade do
       articles = NewsFacade.get_articles("spacex")
       expect(articles.count).to eq(3)
     end
+    it 'returns articles sorted most recent first by default' do
+      articles = NewsFacade.get_articles("spacex")
+      expect(articles.count).to eq(3)
+      expect articles.first.published_at < articles.second.published_at
+      expect articles.second.published_at < articles.third.published_at
+    end
   end
 end
