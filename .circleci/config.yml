@@ -23,6 +23,11 @@ jobs:
         key: code_industry_{{ checksum "Gemfile.lock" }}
 
       # Bundle install dependencies
+      - run: sudo gem update --system
+      - run: sudo gem uninstall bundler
+      - run: sudo rm /usr/local/bin/bundle
+      - run: sudo rm /usr/local/bin/bundler
+      - run: sudo gem install bundler
       - run: bundle install --path vendor/bundle
 
       # Cache Dependencies
