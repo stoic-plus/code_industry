@@ -4,8 +4,9 @@ jobs:
   build:
     working_directory: ~/code_industry
     docker:
-      - image: circleci/ruby:2.4.1
+      - image: circleci/ruby:2.4.5
         environment:
+          BUNDLER_VERSION: 2.0.1
           PGHOST: localhost
           PGUSER: code_industry
           RAILS_ENV: test
