@@ -2,17 +2,17 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/your-app-name
+    working_directory: ~/code_industry
     docker:
       - image: circleci/ruby:2.4.1
         environment:
           PGHOST: localhost
-          PGUSER: your-app-name
+          PGUSER: code_industry
           RAILS_ENV: test
       - image: postgres:9.5
         environment:
-          POSTGRES_USER: your-app-name
-          POSTGRES_DB: your-app-name_test
+          POSTGRES_USER: code_industry
+          POSTGRES_DB: code_industry
           POSTGRES_PASSWORD: ""
     steps:
       - checkout
@@ -20,7 +20,7 @@ jobs:
       # Restore Cached Dependencies
       - type: cache-restore
         name: Restore bundle cache
-        key: your-app-name-{{ checksum "Gemfile.lock" }}
+        key: code_industry_{{ checksum "Gemfile.lock" }}
 
       # Bundle install dependencies
       - run: bundle install --path vendor/bundle
@@ -28,7 +28,7 @@ jobs:
       # Cache Dependencies
       - type: cache-save
         name: Store bundle cache
-        key: your-app-name-{{ checksum "Gemfile.lock" }}
+        key: code_industry{{ checksum "Gemfile.lock" }}
         paths:
           - vendor/bundle
 
