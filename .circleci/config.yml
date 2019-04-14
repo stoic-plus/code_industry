@@ -4,7 +4,7 @@ jobs:
   build:
     working_directory: ~/code_industry
     docker:
-      - image: circleci/ruby:2.6.0-node
+      - image: circleci/ruby:2.4.5
         environment:
           PGHOST: localhost
           PGUSER: code_industry
