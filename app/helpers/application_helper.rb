@@ -11,4 +11,26 @@ module ApplicationHelper
       :content=>"Last year SpaceX finally launched its massive Falcon Heavy rocket for the first time. While the plan to return all three of its boosters fell just short of success, today the company will try again, and as usual you can watch a live stream of the attempt righ… [+587 chars]"
    }
   end
+
+  def self.article_search_return
+    {
+    status: "ok",
+    totalResults: 32,
+    articles: [
+        {
+            source: {
+                id: 'null',
+                name: "Space.com"
+            },
+            author: "Elizabeth Howell",
+            title: "Can robots build a Moon base for astronauts? Japan hopes to find out.",
+            description: "Japan's space agency wants to create a moon base with the help of robots that can work autonomously, with little human supervision.",
+            url: "http://www.space.com/japan-robots-build-moon-base.html",
+            urlToImage: "https://static.foxnews.com/foxnews.com/content/uploads/2019/04/afdphxajn2rfe3jR7Xvx2D.jpg",
+            publishedAt: "2019-04-08T14:05:24Z",
+            content: "Japan's space agency wants to create a moon base with the help of robots that can work autonomously, with little human supervision.\r\nThe project, which has racked up three years of research so far, is a collaboration between the Japan Aerospace Exploration Ag… [+3353 chars]"
+        }
+      ]
+    }
+  end
 end
