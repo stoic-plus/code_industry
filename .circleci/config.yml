@@ -6,7 +6,6 @@ jobs:
     docker:
       - image: circleci/ruby:2.6.0-node
         environment:
-          BUNDLER_VERSION: 2.0.1
           PGHOST: localhost
           PGUSER: code_industry
           RAILS_ENV: test
