@@ -3,5 +3,5 @@
 <p>Click a topic below to follow it</p>
 
 <% @topics.each do |topic| %>
-  <%= button_tag(topic.name) %>
+  <%= button_to topic.name, topic_path(topic.id), method: :get %>
 <% end %>
