@@ -1,0 +1,7 @@
+<h1>Welcome to ScienceFollow</h1>
+
+<p>Click a topic below to follow it</p>
+
+<% @topics.each do |topic| %>
+  <%= button_tag(topic.name) %>
+<% end %>
