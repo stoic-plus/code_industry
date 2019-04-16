@@ -1,9 +1,6 @@
 require 'rails_helper'
 
 describe 'homepage' do
-  # I see a short description of the application
-  # I see a list of companies as buttons
-  # I see an explanation that buttons are to follow companies
   before :each do
     moderator = User.create(username: 'EL PATRON', name: 'steve', email: 's@mail.com', password: 'password', moderator: true)
     @t_1 = Topic.create(name: 'SpaceX', moderator_id: moderator.id)
@@ -16,6 +13,12 @@ describe 'homepage' do
     expect(page).to have_button(@t_1.name)
     expect(page).to have_button(@t_2.name)
     expect(page).to have_button(@t_3.name)
-    expect(page).to have_content("Click a topic to follow it")
+    expect(page).to have_content("Click a topic below to follow it")
+  end
+  it 'redirects to that topics page after following' do
+    visit '/'
+    click_on "#{@t_1.name}"
+    expect(current_path).to eq(topic_path(@t_1.id))
+    expect(page).to have_content("#{@t_1.name}")
   end
 end
