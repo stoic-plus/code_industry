@@ -1,7 +1,118 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/ricardoledesma/code/mod_4/code_industry/app/controllers/welcome_controller.rb": [
+        1,
+        1,
+        2,
+        null,
+        null
+      ],
+      "/Users/ricardoledesma/code/mod_4/code_industry/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/ricardoledesma/code/mod_4/code_industry/app/models/topic.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/ricardoledesma/code/mod_4/code_industry/app/controllers/sessions_controller.rb": [
+        1,
+        1,
+        2,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/ricardoledesma/code/mod_4/code_industry/app/models/user.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/ricardoledesma/code/mod_4/code_industry/app/models/followed_topic.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/ricardoledesma/code/mod_4/code_industry/app/controllers/dashboard_controller.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/ricardoledesma/code/mod_4/code_industry/app/models/news_facade.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        70,
+        0,
+        null,
+        null,
+        1,
+        20,
+        26,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        20,
+        19,
+        null,
+        20,
+        null,
+        1,
+        null,
+        null
+      ],
       "/Users/ricardoledesma/code/mod_4/code_industry/app/services/news_service.rb": [
+        1,
+        1,
         1,
         1,
         1,
@@ -27,11 +138,27 @@
         null,
         null
       ],
-      "/Users/ricardoledesma/code/mod_4/code_industry/app/models/followed_topic.rb": [
-        0,
-        0,
-        0,
-        0
+      "/Users/ricardoledesma/code/mod_4/code_industry/app/models/news_article.rb": [
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        19,
+        19,
+        19,
+        19,
+        19,
+        19,
+        19,
+        19,
+        null,
+        null
       ],
       "/Users/ricardoledesma/code/mod_4/code_industry/app/models/article.rb": [
         0,
@@ -48,14 +175,6 @@
       ],
       "/Users/ricardoledesma/code/mod_4/code_industry/app/models/favorited_article.rb": [
         0,
-        0,
-        0,
-        0
-      ],
-      "/Users/ricardoledesma/code/mod_4/code_industry/app/models/topic.rb": [
-        0,
-        0,
-        null,
         0,
         0,
         0
@@ -80,25 +199,14 @@
         0,
         0
       ],
-      "/Users/ricardoledesma/code/mod_4/code_industry/app/models/user.rb": [
-        0,
-        0,
-        null,
-        0,
-        0,
-        null,
+      "/Users/ricardoledesma/code/mod_4/code_industry/app/controllers/topics_controller.rb": [
         0,
         0,
         0,
-        0,
-        0,
-        0
-      ],
-      "/Users/ricardoledesma/code/mod_4/code_industry/app/controllers/application_controller.rb": [
         0,
         0
       ]
     },
-    "timestamp": 1555261122
+    "timestamp": 1555509732
   }
 }

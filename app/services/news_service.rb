@@ -1,12 +1,12 @@
 class NewsService
-  def self.everything_search(search_query, sortBy='relevance', from=nil, to=nil)
+  def self.everything_search(search_query, sortBy='relevance', from=nil, to=nil, language='en')
     response = conn.get do |req|
       req.url 'everything'
       req.params['q'] = "\"#{search_query}\""
       req.params['from'] = from if from
       req.params['to'] = to if to
       req.params['apiKey'] = ENV['API_KEY']
-      req.params['language'] = 'en'
+      req.params['language'] = language
       req.params['sortBy'] = sortBy
     end
     get_json(response.body)
