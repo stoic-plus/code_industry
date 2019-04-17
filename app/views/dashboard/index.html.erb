@@ -1,0 +1,15 @@
+<p>Hello <%= current_user.name %>!</p>
+
+<p>Topics you follow</p>
+
+<% @latest_articles.each do |latest_article| %>
+  <div class="latest">
+    <h3><%= latest_article[0] %></h3>
+    <% latest_article[1].each do |article| %>
+      <div class="article">
+        <p><%= article.title %></p>
+        <p><%= article.content %></p>
+      </div>
+    <% end %>
+  </div>
+<% end %>
