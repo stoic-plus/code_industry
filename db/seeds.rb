@@ -6,7 +6,7 @@ FollowedTopic.destroy_all
 Post.destroy_all
 Comment.destroy_all
 
-moderator = User.create!(username: 'EL PATRON', name: 'steve', email: 's@mail.com', password: 'password', moderator: true)
+moderator = User.create(username: 'EL PATRON', name: 'steve', email: 's@mail.com', password: 'password', moderator: true)
 Topic.create(name: 'SpaceX', moderator_id: moderator.id)
 Topic.create(name: 'Blue Origin', moderator_id: moderator.id)
 Topic.create(name: 'Virgin Galactic', moderator_id: moderator.id)
